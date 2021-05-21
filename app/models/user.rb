@@ -5,8 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :items
+  has_many :orders
   
-  NAME_REGEX_KANJI = /\A[ぁ-んァ-ン一-龥々]/
+  NAME_REGEX_KANJI = /\A[ぁ-んァ-ン一-龥々ー]+\z/
   NAME_REGEX_KANA = /\A[ァ-ヶー－]+\z/
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
 
